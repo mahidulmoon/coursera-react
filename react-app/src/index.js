@@ -17,15 +17,28 @@
 // reportWebVitals();
 
 
-function sayHello(){
-  // for (var i = 0; i<5 ;i++){ //var is only use for the same function
-  //   console.log(i)
-  // }
-  // console.log(i);
-  for (let i = 0; i<5 ;i++){
-    console.log(i)
-  }
-  //console.log(i);
-}
+// function sayHello(){
+//   // for (var i = 0; i<5 ;i++){ //var is only use for the same function
+//   //   console.log(i)
+//   // }
+//   // console.log(i);
+//   for (let i = 0; i<5 ;i++){
+//     console.log(i)
+//   }
+//   //console.log(i);
+// }
 
-sayHello();
+// sayHello();
+
+
+const person = {
+  name: "moon",
+  walk() {},
+  talk() {}
+};
+
+person.talk();
+person.name = '';
+
+const targetMember = 'name';
+person[targetMember.value] = "mahidulmoon";
