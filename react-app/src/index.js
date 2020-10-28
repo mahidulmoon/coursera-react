@@ -84,3 +84,15 @@ const address = {
 };
 
 const { street,city,country } = address;
+
+
+const first = [1,2,3]
+const last = [3,4,5]
+
+const combined = [...first,...last]
+console.log(combined);
+
+const second = {name:'mahidul'}
+const lastt = {city: 'ctg'}
+const combine = {...second,...lastt, location: 'Bangladesh'}
+console.log(combine)
