@@ -48,18 +48,30 @@
 // person[targetMember.value] = "mahidulmoon";
 
 //ES5
-const square1 = function(number) {
-  return number * number
-}
+// const square1 = function(number) {
+//   return number * number
+// }
 
 //ES6 modern js
-const square2 = (number) => {
-  return number * number
-}
+// const square2 = (number) => {
+//   return number * number
+// }
 
 //ES6 modern in short line of code 
-const square3 = number => number*number ; 
+// const square3 = number => number*number ; 
 
-console.log(square1(5));
-console.log(square2(5));
-console.log(square3(5))
+// console.log(square1(5));
+// console.log(square2(5));
+// console.log(square3(5))
+
+
+const colors = ['red','blue','green']
+
+//old mapping
+const item = colors.map(function(color){
+  return '<li>'+ color +'</li>';
+});
+
+//modern maping with arrow function
+
+const items = colors.map(color => '<li>'+ color +'</li>');
