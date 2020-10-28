@@ -31,18 +31,35 @@
 // sayHello();
 
 
-const person = {
-  name: "moon",
-  walk() {
-    console.log(this);
-  }
+// const person = {
+//   name: "moon",
+//   walk() {
+//     console.log(this);
+//   }
   
-};
+// };
 
-person.walk();
-const walk = person.walk.bind(person);
-walk();
+// person.walk();
+// const walk = person.walk.bind(person);
+// walk();
 // person.name = ''
 
 // const targetMember = 'name';
 // person[targetMember.value] = "mahidulmoon";
+
+//ES5
+const square1 = function(number) {
+  return number * number
+}
+
+//ES6 modern js
+const square2 = (number) => {
+  return number * number
+}
+
+//ES6 modern in short line of code 
+const square3 = number => number*number ; 
+
+console.log(square1(5));
+console.log(square2(5));
+console.log(square3(5))
