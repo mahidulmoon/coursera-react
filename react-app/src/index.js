@@ -75,3 +75,12 @@ const item = colors.map(function(color){
 //modern maping with arrow function
 
 const items = colors.map(color => '<li>'+ color +'</li>');
+
+
+const address = {
+  street: '',
+  city: '',
+  country: ''
+};
+
+const { street,city,country } = address;
