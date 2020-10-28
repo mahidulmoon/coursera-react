@@ -33,12 +33,14 @@
 
 const person = {
   name: "moon",
-  walk() {},
-  talk() {}
+  walk() {
+    console.log(this);
+  }
+  
 };
 
-person.talk();
-person.name = '';
+person.walk();
+// person.name = ''
 
-const targetMember = 'name';
-person[targetMember.value] = "mahidulmoon";
+// const targetMember = 'name';
+// person[targetMember.value] = "mahidulmoon";
