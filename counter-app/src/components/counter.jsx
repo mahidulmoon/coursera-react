@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class Counter extends Component {
     state = {
         count: 0,
-        imageUrl: 'https://picsum.photos/200'
+        imageUrl: 'https://picsum.photos/200',
+        tags: ['tag1','tag2','tag3']
     };
     formatcount(){
         const {count} = this.state;
@@ -21,6 +22,10 @@ class Counter extends Component {
                 <img src={this.state.imageUrl} alt="" />
                 <span style={this.styles} className="badge badge-primary m-2">{this.formatcount()}</span>
                 <button className={this.getBadgeClasses()}>Increment</button>
+                {this.state.tags.length != 0 && 
+                <ul>
+                    {this.state.tags.map(tag => <li key={tag}>{ tag }</li>)}
+                </ul>}
             </>
         );
     }
