@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        count: 0,
+        count: this.props.value,
         imageUrl: 'https://picsum.photos/200',
         tags: ['tag1','tag2','tag3']
     };
@@ -15,8 +15,8 @@ class Counter extends Component {
         fontSize : 10,
         fontWeight : "bold"
     };
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.handleIncrement = this.handleIncrement.bind(this);
     }
     doHandleIncrement = () =>{
@@ -34,6 +34,7 @@ class Counter extends Component {
     }
     render() {
         //let classes = this.getBadgeClasses();
+        
         return (
             <>
                 <img src={this.state.imageUrl} alt="" />
