@@ -15,14 +15,24 @@ class Counter extends Component {
         fontSize : 10,
         fontWeight : "bold"
     };
+    constructor(){
+        super();
+        this.handleIncrement = this.handleIncrement.bind(this);
+    }
+    handleIncrement = () =>{
+        console.log("increment Clicked",this.state.count);
+    }
+    handleIncrement1(){
+        console.log("increment Clicked",this.state.count);
+    }
     render() {
-        let classes = this.getBadgeClasses();
+        //let classes = this.getBadgeClasses();
         return (
             <>
                 <img src={this.state.imageUrl} alt="" />
                 <span style={this.styles} className="badge badge-primary m-2">{this.formatcount()}</span>
-                <button className={this.getBadgeClasses()}>Increment</button>
-                {this.state.tags.length != 0 && 
+                <button onClick={this.handleIncrement1} className={this.getBadgeClasses()}>Increment</button>
+                {this.state.tags.length !== 0 && 
                 <ul>
                     {this.state.tags.map(tag => <li key={tag}>{ tag }</li>)}
                 </ul>}
