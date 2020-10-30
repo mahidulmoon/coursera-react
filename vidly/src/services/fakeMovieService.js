@@ -1,4 +1,5 @@
 import * as genresAPI from "./fakeGenreService";
+//import randomstring from "random-string";
 const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd471815",
@@ -81,16 +82,16 @@ export function saveMovie(movie) {
   movieInDb.numberInStock = movie.numberInStock;
   movieInDb.dailyRentalRate = movie.dailyRentalRate;
 
-  if (!movieInDb._id) {
-    movieInDb._id = randomstring({
-      length: 15,
-      numeric: true,
-      letters: true,
-      special: false,
-      exclude: ["a", "b", "1"]
-    });
-    movies.push(movieInDb);
-  }
+  // if (!movieInDb._id) {
+  //   movieInDb._id = randomstring({
+  //     length: 15,
+  //     numeric: true,
+  //     letters: true,
+  //     special: false,
+  //     exclude: ["a", "b", "1"]
+  //   });
+  //   movies.push(movieInDb);
+  // }
 
   return movieInDb;
 }
