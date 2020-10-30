@@ -38,6 +38,7 @@ class Counter extends Component {
         return (
             <>
                 <img src={this.state.imageUrl} alt="" />
+                {this.props.children}
                 <span style={this.styles} className="badge badge-primary m-2">{this.formatcount()}</span>
                 {/* <button onClick={this.doHandleIncrement} className={this.getBadgeClasses()}>Increment</button> */}
                 <button onClick={()=>this.handleIncrement({id:1})} className={this.getBadgeClasses()}>Increment</button>
