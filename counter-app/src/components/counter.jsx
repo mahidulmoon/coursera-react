@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class Counter extends Component {
     state = {
         count: this.props.value,
+        id:this.props.id,
         imageUrl: 'https://picsum.photos/200',
         tags: ['tag1','tag2','tag3']
     };
@@ -19,6 +20,10 @@ class Counter extends Component {
         super(props);
         this.handleIncrement = this.handleIncrement.bind(this);
     }
+    handleIncrement1(){
+        console.log("increment Clicked",this.state.count);
+        
+    }
     doHandleIncrement = () =>{
         this.handleIncrement({id:1});
     }
@@ -27,10 +32,6 @@ class Counter extends Component {
         //console.log("increment Clicked",this.state.count);
         console.log(product);
         this.setState({count: this.state.count+1});
-    }
-    handleIncrement1(){
-        console.log("increment Clicked",this.state.count);
-        
     }
     render() {
         //let classes = this.getBadgeClasses();
@@ -42,6 +43,7 @@ class Counter extends Component {
                 <span style={this.styles} className="badge badge-primary m-2">{this.formatcount()}</span>
                 {/* <button onClick={this.doHandleIncrement} className={this.getBadgeClasses()}>Increment</button> */}
                 <button onClick={()=>this.handleIncrement({id:1})} className={this.getBadgeClasses()}>Increment</button>
+                <button onClick={()=>this.props.onDelete(this.props.cid)} className="btn-danger btn-sm m2">Delete</button>
                 {this.state.tags.length !== 0 && 
                 <ul>
                     {this.state.tags.map(tag => <li key={tag}>{ tag }</li>)}
