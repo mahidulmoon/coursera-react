@@ -32,18 +32,24 @@ class Counter extends Component {
         //let classes = this.getBadgeClasses();
         
         return (
-            <>
+            <div className="row">
                 {/* <img src={this.state.imageUrl} alt="" /> */}
                 {this.props.children}
-                <span style={this.styles} className="badge badge-primary m-2">{this.props.counter.value}</span>
-                {/* <button onClick={this.doHandleIncrement} className={this.getBadgeClasses()}>Increment</button> */}
-                <button onClick={()=>this.props.onIncrement(this.props.counter)} className={this.getBadgeClasses()}>Increment</button>
-                <button onClick={()=>this.props.onDelete(this.props.counter.id)} className="btn-danger btn-sm m2">Delete</button>
-                {/* {this.state.tags.length !== 0 && 
+                <div className="col-1">
+                    <span  className="badge badge-primary m-2">{this.props.counter.value}</span>
+                </div>
+                <div className="col">
+                    <button onClick={()=>this.props.onIncrement(this.props.counter)} className={this.getBadgeClasses()}>+</button>
+                    <button onClick={()=>this.props.onDecrement(this.props.counter)} className={this.getBadgeClasses()}>-</button>
+                    <button onClick={()=>this.props.onDelete(this.props.counter.id)} className="btn-danger btn-sm m-2">Delete</button>
+                </div>
+                {/* <button onClick={this.doHandleIncrement} className={this.getBadgeClasses()}>Increment</button> */
+                
+                /* {this.state.tags.length !== 0 && 
                 <ul>
                     {this.state.tags.map(tag => <li key={tag}>{ tag }</li>)}
                 </ul>} */}
-            </>
+            </div>
         );
     }
 
