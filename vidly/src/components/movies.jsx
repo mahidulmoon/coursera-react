@@ -29,7 +29,7 @@ class Movies extends Component {
         if( count=== 0){
             return (<p>There are no movies in the database</p>)
         }
-        const movies = paginate(allMovies);
+        const movies = paginate(allMovies,currentPage,pageSize);
         return (
             <div>
                 <p>Showing {count} movies in the database </p>
