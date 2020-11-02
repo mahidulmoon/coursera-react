@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {getMovies} from '../services/fakeMovieService';
 import Pagination from './common/pagination';
-import Like from './common/like';
 import {paginate} from '../utils/paginate';
 import ListGroup from './common/listGroup';
 import {getGenres} from '../services/fakeGenreService';
+import MoviesTable from './moveisTable';
 class Movies extends Component {
     state ={
         movies: [],
@@ -47,31 +47,7 @@ class Movies extends Component {
                 </div>
                 <div className="col">
                     <p>Showing {count} movies in the database </p>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Genre</th>
-                                <th>Stock</th>
-                                <th>Rate</th>
-                                <th/>
-                                <th/>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {movies.map(movie => (
-                                <tr key={movie.id}>
-                                    <td>{movie.title}</td>
-                                    <td>{movie.genre.name}</td>
-                                    <td>{movie.numberInStock}</td>
-                                    <td>{movie.dailyRentalRate}</td>
-                                    <td><Like liked={movie.liked} onClick={()=>this.handleLike(movie)} /></td>
-                                    <td><button onClick={()=>this.hadleDelete(movie)} className="btn btn-danger btn-sm">Delete</button></td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <MoviesTable movies={movies} onLike={this.handleLike} onDelete={this.hadleDelete} />
                     <Pagination itemsCount={filtered.length} pageSize={pageSize} currentPage={currentPage} onPageChange={this.handlePageChange} />
                 </div>
                 
