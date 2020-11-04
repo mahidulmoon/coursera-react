@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Input from './common/input';
 export default class LoginForm extends Component {
     state={
         account: {
@@ -8,7 +8,7 @@ export default class LoginForm extends Component {
         },
 
     };
-    username = React.createRef();
+    //username = React.createRef();
 
     // componentDidMount(){
     //     this.username.current.focus();
@@ -31,16 +31,11 @@ export default class LoginForm extends Component {
         <div>
             <h1>Login</h1>
             <form onSubmit={this,this.handleSubmit}>
-                    <div className="form-group">
-                        <label htmlFor="username">Username</label>
-                        <input autoFocus ref={this.username} name="username" onChange={this.handleChange} value={account.username} id="username" type="text" className="from-consol"/>
-                    </div>
-            
-                    <div className="form-group">
-                        <label htmlFor="password">Password</label>
-                        <input value={account.password} name="password" onChange={this.handleChange} value={account.password} id="password" type="text" className="from-consol"/>
-                    </div>
-                    <button className="btn btn-primary">Login</button>
+                    
+                <Input name="username" value={account.username} label="Username" onChange={this.handleChange} />
+                <Input name="password" value={account.password} label="Password" onChange={this.handleChange} />
+
+                <button className="btn btn-primary">Login</button>
             </form>
         </div>
     );
