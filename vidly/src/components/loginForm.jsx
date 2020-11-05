@@ -55,7 +55,7 @@ export default class LoginForm extends Component {
                 <Input name="username" value={account.username} label="Username" error={this.state.errors.username} onChange={this.handleChange} />
                 <Input name="password" value={account.password} label="Password" error={this.state.errors.password} onChange={this.handleChange} />
 
-                <button className="btn btn-primary">Login</button>
+                <button disabled={this.validate()} className="btn btn-primary">Login</button>
             </form>
         </div>
     );
